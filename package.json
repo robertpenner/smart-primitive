@@ -1,0 +1,94 @@
+{
+  "name": "@penner/smart-primitive",
+  "version": "0.1.1",
+  "description": "Type-safe branded primitives with zero runtime overhead - prevent bugs by distinguishing different kinds of numbers, strings, and booleans",
+  "keywords": [
+    "branded-types",
+    "compile-time",
+    "developer-experience",
+    "phantom-types",
+    "smart-types",
+    "type-checking",
+    "type-safety",
+    "typescript",
+    "units",
+    "zero-runtime"
+  ],
+  "homepage": "https://github.com/robertpenner/smart-primitive#readme",
+  "license": "MIT",
+  "author": "Robert Penner <robert@robertpenner.com> (https://robertpenner.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertpenner/smart-primitive.git"
+  },
+  "files": [
+    "dist",
+    "SKILL.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "units": [
+        "dist/units/index.d.ts"
+      ],
+      "strings": [
+        "dist/strings/index.d.ts"
+      ],
+      "convert": [
+        "dist/convert.d.ts"
+      ]
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./units": {
+      "types": "./dist/units/index.d.ts",
+      "import": "./dist/units/index.js",
+      "require": "./dist/units/index.cjs"
+    },
+    "./strings": {
+      "types": "./dist/strings/index.d.ts",
+      "import": "./dist/strings/index.js",
+      "require": "./dist/strings/index.cjs"
+    },
+    "./convert": {
+      "types": "./dist/convert.d.ts",
+      "import": "./dist/convert.js",
+      "require": "./dist/convert.cjs"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "typecheck": "tsgo --noEmit",
+    "lint:scripts": "eslint ./src --ext .ts",
+    "format:scripts": "oxfmt \"./src/**/*.{js,jsx,ts,tsx,css,json,jsonc}\"",
+    "test": "npm run test:run",
+    "test:run": "vitest run",
+    "test:dot": "vitest run --reporter=dot",
+    "test:watch": "vitest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tsdown": "^0.21.8",
+    "typescript": "^5.8.3",
+    "vitest": "3.2.2",
+    "@typescript/native-preview": "^7.0.0-dev.20260421.2",
+    "oxfmt": "^0.45.0"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "bugs": "https://github.com/robertpenner/smart-primitive/issues"
+}
