@@ -1,6 +1,6 @@
 {
   "name": "@penner/smart-primitive",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Type-safe branded primitives with zero runtime overhead - prevent bugs by distinguishing different kinds of numbers, strings, and booleans",
   "keywords": [
     "branded-types",
